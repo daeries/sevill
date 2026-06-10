@@ -1,447 +1,654 @@
-<!DOCTYPE html>
-<html class="zyyo.net">
-	<head class="zyyo.net">
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>我的收藏</title>
-		<link rel="shortcut icon" href="favicon.ico" />
-		<link rel="apple-touch-icon" href="favicon.ico" />
-		<meta name="keywords" content="导航,主页,书签">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="https://jsd2.pixcat.cn/gh/ZYYO666/homepage@main/static/css/style.css">
-		<link rel="stylesheet" href="https://jsd2.pixcat.cn/gh/xiangsudian/CaoMei@master/style.css">
-
-		<style>
-			html {
-				--main_bg_color: rgb(238, 238, 238);
-				--main_text_color: #000;
-				--gradient: linear-gradient(120deg, #bd34fe, #e0321b 30%, #41d1ff 60%);
-				--purple_text_color: #747bff;
-				--text_bg_color: #00000040;
-				--item_bg_color: #fff;
-				--item_hover_color: #fff;
-				--item_left_title_color: ;
-				--item_left_text_color: ;
-				--footer_text_color: #000;
-				--left_tag_item: rgb(27 42 57 / 20%);
-				--card_filter: 2.5px;
-				/* 				--back_filter: 0px;
-				--back_filter_color: #00000030; */
-				--fill: #000;
-			}
-
-			html[data-theme="Dark"] {
-				--main_bg_color: url(https://t.mwm.moe/fj) rgb(0, 0, 0);
-				--main_text_color: #ffffff;
-				/* --gradient: linear-gradient(120deg, #bd34fe, #e0321b 30%, #41d1ff 60%); */
-				--purple_text_color: #747bff;
-				--text_bg_color: #00000040;
-				--item_bg_color: #00000038;
-				--item_hover_color: #33333338;
-				--item_left_title_color: ;
-				--item_left_text_color: ;
-				--footer_text_color: #ffffff;
-				--left_tag_item: rgb(27 42 57 / 20%);
-				--card_filter: 2.5px;
-				--back_filter: 0px;
-				--back_filter_color: #00000030;
-				--fill: #ffffff;
-			}
-		</style>
-
-
-		<style>
-			.zyyo-right {
-				width: 100%;
-			}
-
-			.tanChiShe {
-				display: none;
-			}
-
-			.projectItemRight img {
-				display: none;
-			}
-
-			.zyyo-main {
-				max-width: 1100px;
-			}
-			
-			.onoffswitch-inner:after {
-				background-color: #737373;
-			}
-		</style>
-	</head>
-
-	<body>
-		<div id="zyyo-loading">
-			<div id="zyyo-loading-center">
-			</div>
-		</div>
-		<div class="zyyo-filter"></div>
-		<div class="zyyo-main">
-
-			<div class="zyyo-right">
-				<header>
-
-					<div class="welcome">
-						我的收藏
-						<!-- <span class="gradientText">收藏夹</span> -->
-					</div>
-
-					<div class="description">书签与百宝箱</div>
-
-					<div class="iconContainer">
-						<a class="iconItem" onclick="" href="./">
-							<svg class="icon"  xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 11A8.1 8.1 0 0 0 4.5 9M4 5v4h4m-4 4a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"/></svg>
-							<div class="iconTip">换版</div>
-						</a><a class="iconItem" onclick="" href="https://pixcat.cn">
-							<svg t="1714813178890" class="icon" viewBox="0 0 1024 1024" version="1.1"
-								xmlns="http://www.w3.org/2000/svg" p-id="1576">
-								<path
-									d="M810.666667 853.376C810.666667 500.437333 523.562667 213.333333 170.666667 213.333333v85.333334c305.834667 0 554.666667 248.832 554.666666 554.709333h85.333334z"
-									p-id="1577"></path>
-								<path
-									d="M512 853.376h85.333333C597.333333 618.069333 405.930667 426.666667 170.666667 426.666667v85.333333c188.202667 0 341.333333 153.130667 341.333333 341.376z"
-									p-id="1578"></path>
-								<path
-									d="M256 768m-85.333333 0a85.333333 85.333333 0 1 0 170.666666 0 85.333333 85.333333 0 1 0-170.666666 0Z"
-									p-id="1579"></path>
-							</svg>
-							<div class="iconTip">关注</div>
-						</a><a class="iconItem" onclick="" href="http://mp3.pixcat.cn/">
-							<svg t="1714495313485" class="icon" viewBox="0 0 1024 1024" version="1.1"
-								xmlns="http://www.w3.org/2000/svg" p-id="12155">
-								<path
-									d="M810.666667 640V170.666667a42.666667 42.666667 0 0 0-16.213334-33.28 42.666667 42.666667 0 0 0-35.84-8.533334l-384 85.333334A42.666667 42.666667 0 0 0 341.333333 256v355.84a148.906667 148.906667 0 1 0 85.333334 135.68 186.026667 186.026667 0 0 0 0-22.186667V290.133333l298.666666-66.133333v302.506667a148.906667 148.906667 0 1 0 85.333334 135.253333 194.986667 194.986667 0 0 0 0-21.76z"
-									p-id="12156"></path>
-							</svg>
-							<div class="iconTip">音乐</div>
-						</a><a class="iconItem" onclick="" href="https://pixcat.cn/api/bookmark.php">
-							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none"><path fill="currentColor" d="m12 5l-.707-.707l.707-.707l.707.707zm1 9a1 1 0 1 1-2 0zM6.293 9.293l5-5l1.414 1.414l-5 5zm6.414-5l5 5l-1.414 1.414l-5-5zM13 5v9h-2V5z"/><path stroke="currentColor" stroke-width="2" d="M5 16v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1"/></g></svg>
-							<div class="iconTip">导出书签</div>
-						</a><a class="iconItem" onclick="" href="https://i.pixcat.cn/">
-							<svg  class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m6 18l-2.3 2.3q-.475.475-1.088.213T2 19.575V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18zm-.85-2H20V4H4v13.125zM4 16V4zm4-5q.425 0 .713-.288T9 10t-.288-.712T8 9t-.712.288T7 10t.288.713T8 11m4 0q.425 0 .713-.288T13 10t-.288-.712T12 9t-.712.288T11 10t.288.713T12 11m4 0q.425 0 .713-.288T17 10t-.288-.712T16 9t-.712.288T15 10t.288.713T16 11"/></svg>
-							<div class="iconTip">关于</div>
-						</a> <a class="switch" href="javascript:void(0)">
-							<div class="onoffswitch">
-								<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
-									id="myonoffswitch" checked>
-								<label class="onoffswitch-label" for="myonoffswitch">
-									<span class="onoffswitch-inner"></span>
-									<span class="onoffswitch-switch"></span>
-								</label>
-							</div>
-						</a>
-					</div>
-
-					<div class="tanChiShe">
-						<img id="tanChiShe" src="" alt="">
-					</div>
-				</header>
-
-
-				<content>
-					<div id="jsonList"></div>
-					<div class="title"><svg t="1714501861547" class="icon" viewBox="0 0 1024 1024" version="1.1"
-							xmlns="http://www.w3.org/2000/svg" p-id="9682">
-							<path
-								d="M928 257.7H768v-97.4c0-35.3-28.7-64-64-64H320c-35.3 0-64 28.7-64 64v97.4H96c-17.7 0-32 14.3-32 32v606c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32v-606c0-17.7-14.3-32-32-32z m-608-97.4h384v97H320v-97z m576 703.4H128v-271h281v60c0 17.7 14.3 32 32 32h142c17.7 0 32-14.3 32-32v-60h281v271z m-423-243v-120h78v120h-78z m423-92H615v-60c0-17.7-14.3-32-32-32H441c-17.7 0-32 14.3-32 32v60H128v-207h768v207z"
-								p-id="9683"></path>
-						</svg>更多 </div>
-					<div class="projectList"><a class="projectItem a" target="_blank"
-							href="https://ghmirror00.pages.dev/">
-							<div class="projectItemLeft">
-								<h1>GitHub Mirror</h1>
-								<p>一面通往Github的魔镜. Github Speeeeed Up!</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://ghmirror00.pages.dev/favicon.ico" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank"
-							href="https://act.mihoyo.com/ys/app/interactive-map">
-							<div class="projectItemLeft">
-								<h1>提瓦特大地图</h1>
-								<p>原神地图网页版</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://act.mihoyo.com/ys/app/interactive-map/mapicon.png" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank" href="https://d3ward.github.io/toolz/adblock.html">
-							<div class="projectItemLeft">
-								<h1>Adblock Test</h1>
-								<p>去广告能力测试</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://d3ward.github.io/toolz/assets/adblock/icon.svg" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank" href="https://ocr.plantree.me/ocr">
-							<div class="projectItemLeft">
-								<h1>We OCR</h1>
-								<p>OCR文字识别</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://ocr.plantree.me/favicon.svg" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank" href="https://fayin.love/">
-							<div class="projectItemLeft">
-								<h1>爱发音</h1>
-								<p>练习发音的好助手, 支持美式音标、英式音标，以及字母表的发音</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://fayin.love/favicon.ico" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank" href="https://cook.yunyoujun.cn/">
-							<div class="projectItemLeft">
-								<h1>食用手册</h1>
-								<p>我们今天吃什么？</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://cook.yunyoujun.cn/favicon.svg" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank" href="https://www.dute.org/">
-							<div class="projectItemLeft">
-								<h1>独特工具箱</h1>
-								<p>独特工具箱，提供免费在线工具</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://cdn.tool.dute.me/assets/images/web/favicon.ico" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank" href="https://qr.no0a.cn/">
-							<div class="projectItemLeft">
-								<h1>大西瓜收款码</h1>
-								<p>三合一收款码生成</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://qr.no0a.cn/favicon.ico" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank" href="https://www.autodraw.com/">
-							<div class="projectItemLeft">
-								<h1>AutoDraw</h1>
-								<p>在线画板</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://www.autodraw.com/assets/images/favicon.png" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank" href="https://www.ppzhilian.com/">
-							<div class="projectItemLeft">
-								<h1>PP直连</h1>
-								<p>在线传文件</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://www.ppzhilian.com/icons/favicon-128x128.png" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank" href="https://tools.miku.ac/">
-							<div class="projectItemLeft">
-								<h1>MikuTools</h1>
-								<p>众多独特在线工具集合</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://tools.miku.ac/favicon.ico" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank" href="https://ol.woobx.cn/">
-							<div class="projectItemLeft">
-								<h1>一个木函</h1>
-								<p>一个木函在线工具箱</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://ol.woobx.cn/favicon.ico" alt="">
-							</div>
-
-						</a><a class="projectItem a" target="_blank" href="https://whatshub.top/strule">
-							<div class="projectItemLeft">
-								<h1>分流规则</h1>
-								<p>代理分流规则推荐</p>
-							</div>
-							<div class="projectItemRight">
-								<img src="https://whatshub.top/apple-touch-icon.png" alt="">
-							</div>
-
-						</a></div>
-
-				</content>
-			</div>
-		</div>
-		<footer>&copy; 我的收藏</footer>
-		<div class="tc">
-			<div onclick="" class="tc-main">
-				<img class="tc-img" src="" alt="" srcset="">
-			</div>
-		</div>
-		
-	<script type="text/javascript">
-		function handlePress(event) {
-			this.classList.add('pressed');
-		}
-
-		function handleRelease(event) {
-			this.classList.remove('pressed');
-		}
-
-		function handleCancel(event) {
-			this.classList.remove('pressed');
-		}
-
-		var buttons = document.querySelectorAll('.projectItem');
-		buttons.forEach(function(button) {
-			button.addEventListener('mousedown', handlePress);
-			button.addEventListener('mouseup', handleRelease);
-			button.addEventListener('mouseleave', handleCancel);
-			button.addEventListener('touchstart', handlePress);
-			button.addEventListener('touchend', handleRelease);
-			button.addEventListener('touchcancel', handleCancel);
-		});
-
-
-		function toggleClass(selector, className) {
-			var elements = document.querySelectorAll(selector);
-			elements.forEach(function(element) {
-				element.classList.toggle(className);
-			});
-		}
-
-		function pop(imageURL) {
-			var tcMainElement = document.querySelector(".tc-img");
-			if (imageURL) {
-				tcMainElement.src = imageURL;
-			}
-			toggleClass(".tc-main", "active");
-			toggleClass(".tc", "active");
-		}
-
-		var tc = document.getElementsByClassName('tc');
-		var tc_main = document.getElementsByClassName('tc-main');
-		tc[0].addEventListener('click', function(event) {
-			pop();
-		});
-		tc_main[0].addEventListener('click', function(event) {
-			event.stopPropagation();
-		});
-
-		function setCookie(name, value, days) {
-			var expires = "";
-			if (days) {
-				var date = new Date();
-				date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-				expires = "; expires=" + date.toUTCString();
-			}
-			document.cookie = name + "=" + value + expires + "; path=/";
-		}
-
-		function getCookie(name) {
-			var nameEQ = name + "=";
-			var cookies = document.cookie.split(';');
-			for (var i = 0; i < cookies.length; i++) {
-				var cookie = cookies[i];
-				while (cookie.charAt(0) == ' ') {
-					cookie = cookie.substring(1, cookie.length);
-				}
-				if (cookie.indexOf(nameEQ) == 0) {
-					return cookie.substring(nameEQ.length, cookie.length);
-				}
-			}
-			return null;
-		}
-
-		document.addEventListener('DOMContentLoaded', function() {
-			var html = document.querySelector('html');
-			var themeState = getCookie("themeState") || "Light";
-			var tanChiShe = document.getElementById("tanChiShe");
-
-			function changeTheme(theme) {
-				tanChiShe.src = "./static/svg/snake-" + theme + ".svg";
-				html.dataset.theme = theme;
-				setCookie("themeState", theme, 365);
-				themeState = theme;
-			}
-			var Checkbox = document.getElementById('myonoffswitch')
-			Checkbox.addEventListener('change', function() {
-				if (themeState == "Dark") {
-					changeTheme("Light");
-				} else if (themeState == "Light") {
-					changeTheme("Dark");
-				} else {
-					changeTheme("Dark");
-				}
-			});
-
-			if (themeState == "Dark") {
-				Checkbox.checked = false;
-			}
-
-			changeTheme(themeState);
-			var pageLoading = document.querySelector("#zyyo-loading");
-			setTimeout(function() {
-				pageLoading.style.opacity = '0';
-			}, 100);
-		});
-	</script>
-
-	<script type="text/javascript">
-		fetch('nav.json')
-			.then(response => response.json())
-			.then(data => {
-				const container = document.getElementById('jsonList');
-
-				data.forEach(category => {
-					const titleElement = document.createElement('div');
-					titleElement.className = 'title';
-					titleElement.innerHTML = `<i class="${category.icon}"></i> ${category.classify}`;
-
-					container.appendChild(titleElement);
-
-					const projectListElement = document.createElement('div');
-					projectListElement.className = 'projectList';
-
-					category.sites.forEach(site => {
-						const projectItem = document.createElement('a');
-						projectItem.className = 'projectItem a';
-						projectItem.setAttribute('target', '_blank');
-						projectItem.href = site.href;
-
-						const projectItemLeft = document.createElement('div');
-						projectItemLeft.className = 'projectItemLeft';
-
-						const title = document.createElement('h1');
-						title.textContent = site.name;
-
-						const description = document.createElement('p');
-						description.textContent = site.desc;
-
-						projectItemLeft.appendChild(title);
-						projectItemLeft.appendChild(description);
-
-						const projectItemRight = document.createElement('div');
-						projectItemRight.className = 'projectItemRight';
-
-						const img = document.createElement('img');
-						img.src = site.logo;
-						img.alt = site.name;
-
-						projectItemRight.appendChild(img);
-
-						projectItem.appendChild(projectItemLeft);
-						projectItem.appendChild(projectItemRight);
-
-						projectListElement.appendChild(projectItem);
-					});
-
-					container.appendChild(projectListElement);
-				});
-			})
-			.catch(error => console.error('Error loading JSON:', error));
-	</script>
-	
-</body>
-</html>
+<!DOCTYPE NETSCAPE-Bookmark-file-1>
+<!--This is an automatically generated file.
+It will be read and overwritten.
+Do Not Edit! -->
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE>Bookmarks</TITLE>
+<H1>Bookmarks</H1>
+<DL><p>
+<DT><H3>媒体工具</H3>
+<DL><p>
+<DT><A HREF="https://zh.bgsub.com/webapp/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">消除图片背景</A>
+<DT><A HREF="http://www.pullywood.com/ImageAssistant/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">提取网页图片</A>
+<DT><A HREF="https://img.ops-coffee.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线拼图</A>
+<DT><A HREF="https://videotojpg.com/zh" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">视频转图片</A>
+<DT><A HREF="https://lab.magiconch.com/v/sns-image" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">九宫格切图</A>
+<DT><A HREF="https://i.pixcat.cn/shi-pin-xia-zai-gong-ju#bilibili-bi-li-bi-li" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">B站视频下载</A>
+<DT><A HREF="https://www.pixcat.cn/lab/biliaudio.php" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">B站音频解析</A>
+<DT><A HREF="https://music.zkkp.nyc.mn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Go Music DL</A>
+<DT><A HREF="https://iui.su/2217/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">音乐资源白嫖</A>
+<DT><A HREF="https://fmhy.net/storage#app-site-mockups" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线带壳截图</A>
+<DT><A HREF="https://i.pixcat.cn/xiang-su-hua" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线画像素画</A>
+<DT><A HREF="https://cobalt.tools/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">YouTube 视频下载 ①</A>
+<DT><A HREF="https://i.pixcat.cn/shi-pin-xia-zai-gong-ju" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">YouTube 视频下载 ②</A>
+<DT><A HREF="https://123apps.com/cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">音视频在线剪切</A>
+<DT><A HREF="https://zm.i8k.tv/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">字幕工具箱</A>
+<DT><A HREF="https://texttospeech.im/zh-CN" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">文字转AI语音 ①</A>
+<DT><A HREF="https://www.text-to-speech.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">文字转AI语音 ②</A>
+<DT><A HREF="https://tiktokvoice.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">文字转AI语音 ③</A>
+<DT><A HREF="https://www.alltoall.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线格式转换 ①</A>
+<DT><A HREF="https://www.aconvert.com/cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线格式转换 ②</A>
+<DT><A HREF="https://convertio.co/zh/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线格式转换 ③</A>
+<DT><A HREF="https://localaudioconvert.com/audio-converter" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Local Audio Convert</A>
+<DT><A HREF="https://ffmpeg.gcc.ac.cn/index_zh.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">FFmpeg网页版</A>
+<DT><A HREF="https://www.gaoding.com/koutu" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">快速抠图</A>
+<DT><A HREF="https://inpaintweb.lxfater.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">inpaint-web</A>
+<DT><A HREF="https://clipdrop.co/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Clipdrop</A>
+<DT><A HREF="https://github.com/tumuyan/RealSR-NCNN-Android/releases" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">图片无损放大 ①</A>
+<DT><A HREF="https://github.com/AaronFeng753/Waifu2x-Extension-GUI/blob/master/README_CN.md" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">图片无损放大 ②</A>
+<DT><A HREF="https://space.bilibili.com/12566101/channel/seriesdetail?sid=3930565" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">SD整合包</A>
+</DL><p>
+<DT><H3>效率工具</H3>
+<DL><p>
+<DT><A HREF="https://github.com/wgwang/awesome-LLMs-In-China" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">国内大模型一览</A>
+<DT><A HREF="https://lmarena.ai/leaderboard/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">大模型排行榜 ①</A>
+<DT><A HREF="https://fmhy.net/ai#ai-benchmarks" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">大模型排行榜 ②</A>
+<DT><A HREF="https://tophub.today/c/news" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">今日热榜</A>
+<DT><A HREF="https://nowhots.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">即时热点</A>
+<DT><A HREF="https://immersivetranslate.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">沉浸式翻译</A>
+<DT><A HREF="https://cotrans.touhou.ai/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">翻译图中文字</A>
+<DT><A HREF="https://33tool.com/translate/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">多引擎翻译 ①</A>
+<DT><A HREF="https://openl.club/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">多引擎翻译 ②</A>
+<DT><A HREF="https://i.pixcat.cn/ocr-wen-zi-shi-bie-gong-ju" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">从图片提取文字</A>
+<DT><A HREF="https://excalidraw.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">白板</A>
+<DT><A HREF="https://www.calligrapher.ai/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">模拟手写签名</A>
+<DT><A HREF="https://ip.skk.moe/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">查看本地IP</A>
+<DT><A HREF="http://tools.sbbbb.cn/urltq/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">URL提取</A>
+<DT><A HREF="https://who.cx/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">域名Whois查询 ①</A>
+<DT><A HREF="https://tian.hu/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">域名Whois查询 ②</A>
+<DT><A HREF="https://carbon.now.sh/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">代码卡片制作</A>
+<DT><A HREF="https://wificard.io/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">WIFI卡片制作</A>
+<DT><A HREF="https://chrome.zzzmh.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">浏览器扩展下载 ①</A>
+<DT><A HREF="https://crxdl.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">浏览器扩展下载 ②</A>
+<DT><A HREF="https://www.crxsoso.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">浏览器扩展下载 ③</A>
+<DT><A HREF="https://home.greasyfork.org.cn/zh-hans" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">GFork Proxy</A>
+<DT><A HREF="https://scriptcat.org/zh-CN/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">找脚本 ①</A>
+<DT><A HREF="https://www.zhaojiaoben.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">找脚本 ②</A>
+<DT><A HREF="https://qrbtf.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">二维码生成制作</A>
+<DT><A HREF="https://www.topcpu.net/zh-hk/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">CPU显卡天梯图</A>
+<DT><A HREF="https://www.socpk.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">移动端芯片排行</A>
+<DT><A HREF="https://www.jamcz.com/router/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">路由器CPU性能排行</A>
+<DT><A HREF="https://www.nullgo.com/web/random" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">随机密码生成</A>
+<DT><A HREF="http://tools.sbbbb.cn/defaultpasswd/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">设备默认密码大全</A>
+<DT><A HREF="https://dns.iui.im/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">公共DNS大全</A>
+<DT><A HREF="https://hotkeycheatsheet.com/zh" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">快捷键备忘录</A>
+<DT><A HREF="https://devhints.io/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">开发者速查表 ①</A>
+<DT><A HREF="https://wangchujiang.com/reference/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">开发者速查表②</A>
+<DT><A HREF="https://51.ruyo.net/18684.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AI编程助手收集</A>
+<DT><A HREF="https://gfork.zh-tw.eu.org/zh-hans/scripts/378243" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">网页上都是简体</A>
+<DT><A HREF="https://mutou.men/posts/2023-07-26-国外手机卡汇总/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">获取境外号卡 ①</A>
+<DT><A HREF="https://owomoe.net/dev/175.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">获取境外号卡 ②</A>
+<DT><A HREF="https://www.mygraphpaper.com/index.php?lang=zh-hans" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线方格纸打印</A>
+<DT><A HREF="https://markdown.lovejade.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线 Markdown 编辑 ①</A>
+<DT><A HREF="https://www.zybuluo.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线 Markdown 编辑 ②</A>
+<DT><A HREF="https://fmhy.net/storage#sms-verification-sites" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">帮你收短信 ①</A>
+<DT><A HREF="https://51.ruyo.net/7789.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">帮你收短信 ②</A>
+<DT><A HREF="https://www.207788.xyz/117.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">临时邮箱</A>
+<DT><A HREF="https://www.urlparser.online/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">URL Parser</A>
+</DL><p>
+<DT><H3>存储工具</H3>
+<DL><p>
+<DT><A HREF="https://share.lanol.cn/#/send" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">文件快递柜</A>
+<DT><A HREF="https://www.airportal.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">空投快传</A>
+<DT><A HREF="https://www.securityshare.xyz/zh" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">SecureShare</A>
+<DT><A HREF="https://yunge.in/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">云鸽</A>
+<DT><A HREF="https://pairdrop.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">PairDrop</A>
+<DT><A HREF="https://www.sharedrop.io/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">ShareDrop</A>
+<DT><A HREF="https://localsend.org/zh-CN" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">LocalSend</A>
+<DT><A HREF="https://landrop.app/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">LANDrop</A>
+<DT><A HREF="https://github.com/weixiansen574/HybridFileXfer" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">多轨快传</A>
+<DT><A HREF="https://cdn.ipfsscan.io/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">IPFS文件床</A>
+<DT><A HREF="https://drop.space/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">DROP</A>
+<DT><A HREF="https://netcut.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">网络剪切板</A>
+<DT><A HREF="https://filehelper.weixin.qq.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">文件传输助手</A>
+<DT><A HREF="https://www.ppzhilian.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">PP直连</A>
+<DT><A HREF="https://www.kanxizai.cn/123pan" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">123网盘解析</A>
+<DT><A HREF="https://189.ly93.cc/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">天翼云盘解析</A>
+<DT><A HREF="https://mover.io/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">网盘搬家</A>
+<DT><A HREF="https://www.clouddrive2.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">CloudDrive</A>
+<DT><A HREF="https://cloudreve.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Cloudreve</A>
+<DT><A HREF="https://alist.nn.ci/zh/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Alist</A>
+<DT><A HREF="https://github.com/monlor/docker-xiaoya" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">小雅Alist全家桶</A>
+<DT><A HREF="https://github.com/OpenListTeam/OpenList" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">OpenList</A>
+<DT><A HREF="https://www.netmount.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">NetMount</A>
+<DT><A HREF="https://wzfou.com/mulu-lists/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">目录列表程序整理</A>
+<DT><A HREF="https://i.pixcat.cn/zai-xian-tu-pian-tuo-guan" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">免费图床</A>
+<DT><A HREF="https://whatslink.info/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">查看磁链所含文件</A>
+<DT><A HREF="https://trackerslist.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">热门 BT Tracker 列表</A>
+<DT><A HREF="https://www.pcoof.com/295.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Alist站点集 ①</A>
+<DT><A HREF="https://i.pixcat.cn/alist-zhan-dian-ji" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Alist站点集 ②</A>
+</DL><p>
+<DT><H3>检索工具</H3>
+<DL><p>
+<DT><A HREF="https://iao.su/3700/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">资源搜索导航</A>
+<DT><A HREF="https://www.pansou.vip/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">网盘搜索测评榜榜单</A>
+<DT><A HREF="https://felladrin.github.io/awesome-ai-web-search" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AI搜索引擎汇总</A>
+<DT><A HREF="https://i.pixcat.cn/yi-tu-sou-tu" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">以图搜图</A>
+<DT><A HREF="https://www.asklib.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线搜题</A>
+<DT><A HREF="https://iao.su/908/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">磁力搜索</A>
+<DT><A HREF="https://search.chongbuluo.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">虫部落聚合搜索</A>
+<DT><A HREF="http://shuxiangjia.cn/?cate=9" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">电子书资源查找</A>
+<DT><A HREF="https://www.pingti.app/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">购物平替查询</A>
+<DT><A HREF="https://www.pingti.app/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">购物平替查询</A>
+<DT><A HREF="https://m.gwdang.com/trendIndex/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">历史价格查询</A>
+<DT><A HREF="https://www.sov2ex.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">V2EX站内搜索</A>
+<DT><A HREF="https://tgchannels.me/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">TG 频道搜索</A>
+<DT><A HREF="https://www.github-zh.com/search" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Github项目搜索</A>
+<DT><A HREF="https://wangchujiang.com/linux-command/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Linux命令查询</A>
+<DT><A HREF="https://taogefx.com/3574.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">泄露数据查询</A>
+<DT><A HREF="https://scholar.chongbuluo.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">虫部落学术搜索</A>
+<DT><A HREF="https://www.dayi.org.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">医药信息查询</A>
+<DT><A HREF="https://versus.com/cn" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Versus</A>
+<DT><A HREF="https://www.shodan.io/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Shodan</A>
+<DT><A HREF="https://www.zoomeye.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">钟馗之眼</A>
+<DT><A HREF="https://xiaoshuapp.com/explorer/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">探索者小舒</A>
+</DL><p>
+<DT><H3>折腾工具</H3>
+<DL><p>
+<DT><A HREF="https://github.com/pixcati?tab=stars" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">我的Stars列表</A>
+<DT><A HREF="https://supes.top/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线定制OP固件</A>
+<DT><A HREF="https://www.nazhumi.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">哪里域名便宜 ①</A>
+<DT><A HREF="https://namebeta.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">哪里域名便宜 ②</A>
+<DT><A HREF="https://web.archive.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">网页历史快照</A>
+<DT><A HREF="https://linuxmirrors.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">一键更换软件源</A>
+<DT><A HREF="https://github.com/bin456789/reinstall" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">一键重装服务器</A>
+<DT><A HREF="https://github.com/Chikage0o0/Linux-NetSpeed/blob/master/README.md" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">一键内核网络加速</A>
+<DT><A HREF="http://kangle.cccyun.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">一键安装Kangle</A>
+<DT><A HREF="https://linuxmirrors.cn/other/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">一键安装Docker</A>
+<DT><A HREF="https://ssh.kkbpro.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线SSH终端</A>
+<DT><A HREF="https://wzfou.com/mianfei-ssl/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">免费SSL证书</A>
+<DT><A HREF="https://github.com/spiritLHLS/ecs" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">VPS融合怪脚本</A>
+<DT><A HREF="https://www.hostcli.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">魔改版宝塔面板</A>
+<DT><A HREF="https://github.com/midoks/mdserver-web" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">高仿宝塔面板</A>
+<DT><A HREF="https://cheapvpsbox.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">性价比VPS方案</A>
+<DT><A HREF="https://i.pixcat.cn/vps-ke-shi-hua-guan-li" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">VPS可视化管理</A>
+<DT><A HREF="https://cloudflare.chuhai.tools/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Cloudflare 玩出花</A>
+<DT><A HREF="https://github.com/XIU2/CloudflareSpeedTest" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">CloudFlare 优选IP</A>
+<DT><A HREF="https://cf.090227.xyz/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">CloudFlare 优选域名</A>
+<DT><A HREF="https://www.natfrp.com/user/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">免费内网穿透</A>
+<DT><A HREF="http://tool.chinaz.com/speedtest/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">站长工具国内测速</A>
+<DT><A HREF="https://github.akams.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Github 文件加速</A>
+<DT><A HREF="https://greasyfork.org/zh-CN/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Github 下载加速脚本</A>
+<DT><A HREF="https://ollama.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Ollama</A>
+<DT><A HREF="https://github.com/idootop/mi-gpt" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">MiGPT</A>
+<DT><A HREF="https://koishi.chat/zh-CN/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Koishi</A>
+<DT><A HREF="https://github.com/openclaw/openclaw" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">OpenClaw</A>
+<DT><A HREF="https://github.com/HKUDS/nanobot" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">nanobot</A>
+<DT><A HREF="https://www.clawpulse.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">ClawPulse</A>
+<DT><A HREF="https://www.github-zh.com/top-china" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">GitHub中文排行榜</A>
+<DT><A HREF="https://www.github-zh.com/top" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">GitHub全球排行榜</A>
+<DT><A HREF="https://1c7.github.io/chinese-independent-developer/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">独立开发者项目列表</A>
+<DT><A HREF="https://github.com/Wechat-ggGitHub/Awesome-GitHub-Repo" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Awesome GitHub Repo</A>
+<DT><A HREF="https://github.com/alebcay/awesome-shell/blob/master/README_ZH-CN.md" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Awesome Shell</A>
+</DL><p>
+<DT><H3>综合工具</H3>
+<DL><p>
+<DT><A HREF="https://tools.miku.ac/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">MikuTools</A>
+<DT><A HREF="https://tool.browser.qq.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">帮小忙</A>
+<DT><A HREF="https://iui.su/1492/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">网页在线工具汇总</A>
+<DT><A HREF="http://tool.cccyun.cc/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">彩虹工具</A>
+<DT><A HREF="https://1000tool.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">千盒工具</A>
+<DT><A HREF="https://www.30aitool.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">30TOOL</A>
+<DT><A HREF="https://www.pmbaobao.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">产品经理导航</A>
+<DT><A HREF="https://hao.uisdc.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">设计师导航</A>
+<DT><A HREF="https://chuhai.tools/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">独立开发者导航</A>
+<DT><A HREF="http://hao.199it.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">大数据工具导航</A>
+<DT><A HREF="https://nav.dreamthere.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">梦想导航</A>
+<DT><A HREF="https://imyshare.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">iMyShare</A>
+<DT><A HREF="https://creativemass.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Creative Mass</A>
+<DT><A HREF="https://www.pncao.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">叛逆草</A>
+<DT><A HREF="https://www.tboxn.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Tbox</A>
+<DT><A HREF="https://tools.liumingye.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">刘明野工具箱</A>
+<DT><A HREF="https://n.mumingfang.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">霂明导航</A>
+<DT><A HREF="https://www.kulayu.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">酷啦鱼</A>
+<DT><A HREF="https://qinggongju.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">轻工具</A>
+<DT><A HREF="https://openi.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">OpenI</A>
+<DT><A HREF="https://daohangxie.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">导航蟹</A>
+<DT><A HREF="https://www.amz123.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AMZ123</A>
+<DT><A HREF="https://www.goto-mars.com/people/aLYqyNvYvd#nav-category-265771" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">旁门左道</A>
+<DT><A HREF="http://www.cxy521.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">CXY521</A>
+<DT><A HREF="https://bin9.top/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">冻死企鹅</A>
+<DT><A HREF="https://www.baiduyun.wiki/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">油小猴</A>
+<DT><A HREF="https://www.yckceo.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">源仓库</A>
+<DT><A HREF="https://source.zgqinc.gq/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">各种源大集合</A>
+<DT><A HREF="https://tool.lanrentuku.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">懒人工具箱</A>
+<DT><A HREF="https://zh.pickfrom.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">PickFrom</A>
+<DT><A HREF="https://sbbbb.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">0xShe网络安全导航</A>
+<DT><A HREF="https://tool.lu/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Toollu</A>
+<DT><A HREF="http://www.66zan.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线工具箱</A>
+<DT><A HREF="https://tools.ranblogs.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Tools-Web</A>
+<DT><A HREF="https://www.67tool.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">即时工具</A>
+<DT><A HREF="http://lkssite.vip/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">LKS的网站推荐</A>
+<DT><A HREF="https://nav.laogou717.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">免费AI工具箱</A>
+<DT><A HREF="https://www.aigc.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AI工具导航 ①</A>
+<DT><A HREF="https://www.aiopenminds.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AI工具导航 ②</A>
+<DT><A HREF="https://okeiai.com/zh/tools" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AI工具导航 ③</A>
+<DT><A HREF="https://www.aigotools.com/cn" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AI工具导航 ④</A>
+<DT><A HREF="https://www.aihub.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AI工具导航 ⑤</A>
+</DL><p>
+<DT><H3>视觉资源</H3>
+<DL><p>
+<DT><A HREF="https://www.color4bg.com/zh-hans/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">抽象背景生成器</A>
+<DT><A HREF="https://www.applewalls.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AppleWalls</A>
+<DT><A HREF="https://fmhy.net/system-tools#wallpapers" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">壁纸资源索引</A>
+<DT><A HREF="https://gallery.timeline.ink/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">拾光壁纸</A>
+<DT><A HREF="https://wallhaven.cc/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Wallhaven</A>
+<DT><A HREF="https://www.pexels.com/zh-cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Pexels</A>
+<DT><A HREF="https://unsplash.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Unsplash</A>
+<DT><A HREF="https://vavebg.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Vave BG</A>
+<DT><A HREF="https://www.logosc.cn/so/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">搜图神器</A>
+<DT><A HREF="https://bing.wdbyte.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">必应壁纸</A>
+<DT><A HREF="https://zhutix.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">致美化</A>
+<DT><A HREF="https://pixiv.pictures/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Pixiv Viewer</A>
+<DT><A HREF="http://chuangzaoshi.com/icon/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">草莓图标库</A>
+<DT><A HREF="https://www.iconfont.cn/collections/index?spm=a313x.7781069.1998910419.d33146d14&amp;type=3" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">阿里巴巴图标库</A>
+<DT><A HREF="https://yesicon.app/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Yesicon图标库</A>
+<DT><A HREF="https://resourceboy.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">免费设计资源</A>
+<DT><A HREF="https://ziyouziti.com/index-index-all.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">免费可商用字体</A>
+<DT><A HREF="https://encycolorpedia.cn/named" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">色彩百科</A>
+<DT><A HREF="https://color.adobe.com/zh/create/color-wheel" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线配色</A>
+<DT><A HREF="https://peiseka.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">配色方案推荐</A>
+<DT><A HREF="https://moonvy.com/blog/tags/%E8%AE%BE%E8%AE%A1%E7%B4%A0%E6%9D%90%E5%91%A8%E5%88%8A/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">设计素材周刊</A>
+</DL><p>
+<DT><H3>软件资源</H3>
+<DL><p>
+<DT><A HREF="https://dream.ren/tool/chrome/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">获取最新 Chrome</A>
+<DT><A HREF="https://otp.landian.vip/zh-cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">下载与白嫖 office ①</A>
+<DT><A HREF="https://www.mocreak.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">下载与白嫖 office ②</A>
+<DT><A HREF="https://www.lyszm.com/773.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">获取免费的WPS</A>
+<DT><A HREF="https://pan.baidu.com/wap/link?surl=5Ddk-RywrQk9yi-O3eZ-xmA#/home/%2F/%2F" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Adobe系列下载 ①</A>
+<DT><A HREF="http://adobe.v404.cn/adobe/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Adobe系列下载 ②</A>
+<DT><A HREF="https://www.423down.com/1202.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">激活 Windows</A>
+<DT><A HREF="https://www.423down.com/6707.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">激活 Office</A>
+<DT><A HREF="https://www.ghxi.com/cleanflashplayer.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">获取纯净的Flash</A>
+<DT><A HREF="https://cn.dll-files.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">补回丢失的DLL</A>
+<DT><A HREF="https://www.disktool.cn/recovery/winfr.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">恢复文件与数据</A>
+<DT><A HREF="https://openalternative.co/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">寻找开源代替品</A>
+<DT><A HREF="https://pan.pixcat.cn/%E8%BD%AF%E4%BB%B6" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">我的Alist软件目录</A>
+<DT><A HREF="https://pfandroidapps.lovestoblog.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">旧版本安卓软件库</A>
+<DT><A HREF="https://xiaoyi.vc/win-app" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">小羿的软件商店</A>
+<DT><A HREF="https://myql.eu.org/article/Software" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">雨夜回廊的软件推荐</A>
+<DT><A HREF="https://web.echs.top/links/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">二次寒树的书签</A>
+<DT><A HREF="https://oldpods.cn/home/index/index" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">老豆荚的应用分享</A>
+<DT><A HREF="https://fmhy.net/downloadpiracyguide#software-sites" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">软件下载站索引</A>
+<DT><A HREF="https://github.com/marticliment/UnigetUI" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">UniGetUI</A>
+<DT><A HREF="https://www.423down.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">423down</A>
+<DT><A HREF="https://www.ghxi.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">果核剥壳</A>
+<DT><A HREF="https://www.ruancang.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">软仓</A>
+<DT><A HREF="https://www.uy5.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">克隆窝</A>
+<DT><A HREF="https://www.fenxm.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">分享迷</A>
+<DT><A HREF="https://www.yxzhi.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">鸭先知</A>
+<DT><A HREF="https://tmioe.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">ZAPRO</A>
+<DT><A HREF="https://www.gy328.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">极客应用</A>
+<DT><A HREF="https://www.weidown.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">微当下载</A>
+<DT><A HREF="http://www.qiuquan.cc/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">QiuQuan&#039;s Blog</A>
+<DT><A HREF="https://www.pcoof.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">PC软件库</A>
+<DT><A HREF="https://www.6yit.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">六音软件</A>
+<DT><A HREF="https://www.ypojie.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">易破解</A>
+<DT><A HREF="http://www.yxssp.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">异星软件空间</A>
+<DT><A HREF="https://liteapks.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">LITEAPKS</A>
+<DT><A HREF="https://appshare.muge.info/#" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AppShare</A>
+<DT><A HREF="https://www.gy328.com/app/magicalapk/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">奇妙应用</A>
+<DT><A HREF="https://modyolo.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Modyolo</A>
+<DT><A HREF="https://5play.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">5-Play</A>
+<DT><A HREF="https://www.huorong.cn/app_store.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">火绒应用商店</A>
+<DT><A HREF="https://spark-app.store/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">星火应用商店</A>
+<DT><A HREF="https://github.com/linkease/istore" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">iStore</A>
+<DT><A HREF="https://www.iplaysoft.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">异次元软件世界</A>
+<DT><A HREF="https://pixpinapp.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">截图神器</A>
+<DT><A HREF="https://github.com/huiyadanli/RevokeMsgPatcher/wiki" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">QQ微信防撤回</A>
+</DL><p>
+<DT><H3>游戏资源</H3>
+<DL><p>
+<DT><A HREF="https://www.bilibili.com/read/cv18207718" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">安卓NS模拟器 </A>
+<DT><A HREF="https://fmhy.net/gamingpiracyguide" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">游戏白嫖索引</A>
+<DT><A HREF="https://www.207788.xyz/55.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">云游戏平台合集</A>
+<DT><A HREF="https://www.flysheep6.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">资源避难所 </A>
+<DT><A HREF="https://lzlgo.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">梨子乐</A>
+<DT><A HREF="https://koysobackup.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Koyso</A>
+<DT><A HREF="https://www.yikm.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">小霸王 </A>
+<DT><A HREF="https://www.emu666.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Emu666</A>
+<DT><A HREF="https://zaixianwan.app/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">老游戏在线玩</A>
+<DT><A HREF="https://ddyx.me/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">低端游戏</A>
+<DT><A HREF="https://vimm.net/vault/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Vimm&#039;s Lair</A>
+<DT><A HREF="https://www.emulatorgames.net/roms/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">模拟器游戏ROM</A>
+<DT><A HREF="https://poki.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Poki</A>
+<DT><A HREF="https://www.crazygames.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">CrazyGames</A>
+<DT><A HREF="https://zh.y8.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Y8</A>
+<DT><A HREF="https://itch.io/games/free/platform-web" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">itch.io</A>
+<DT><A HREF="https://www.pacogames.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">PacoGames</A>
+<DT><A HREF="https://java.owoemu.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Java游戏小站</A>
+<DT><A HREF="https://i.pixcat.cn/js-you-xi-yi-ji-xiang-guan-zi-yuan" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Awesome JS Games</A>
+<DT><A HREF="https://flashpointarchive.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Flashpoint</A>
+<DT><A HREF="https://flash.homes/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Flash保存计划</A>
+<DT><A HREF="https://oldswf.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">oldswf </A>
+<DT><A HREF="https://ruffle.rs/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Ruffle </A>
+<DT><A HREF="https://ad4gamesarchive.mysxl.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">安卓4游戏库</A>
+<DT><A HREF="https://www.gamer520.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">NS游戏资源</A>
+<DT><A HREF="https://gameinfo.gbtgame.me/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">白嫖游戏速报</A>
+<DT><A HREF="https://youxi.ggonav.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">游戏资源导航</A>
+<DT><A HREF="https://www.ithome.com/zt/xijiayi" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Epic 喜加一</A>
+<DT><A HREF="http://xproger.info/projects/OpenLara/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">古墓丽影网页版 </A>
+<DT><A HREF="https://www.iplaysoft.com/cemu.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">PC玩Wii U</A>
+<DT><A HREF="https://cn.dolphin-emu.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Dolphin</A>
+<DT><A HREF="https://f-droid.org/zh_Hans/packages/com.swordfish.lemuroid/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Lemuroid</A>
+<DT><A HREF="https://www.retroarch.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">RetroArch</A>
+<DT><A HREF="https://batocera.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Batocera</A>
+<DT><A HREF="https://bing.com/search?q=EmuELEC" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">EmuELEC</A>
+<DT><A HREF="https://7zip.lanzoue.com/itgNi0nvsw8d" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Pcstory</A>
+<DT><A HREF="http://lonelystar.org/download.htm" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">PVZ资源</A>
+<DT><A HREF="https://pvzgame.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">PVZ杂交版</A>
+<DT><A HREF="https://mc.minebbs.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">MC资源</A>
+<DT><A HREF="https://www.mcnav.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">MC导航</A>
+<DT><A HREF="https://ballance.jxpxxzj.cn/wiki/Ballance%E5%90%A7%E5%AF%BC%E8%88%AA%E8%B4%B4" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Ballance</A>
+<DT><A HREF="https://mod.3dmgame.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">3DM Mod站</A>
+<DT><A HREF="https://www.wemod.com/zh" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">WeMod</A>
+<DT><A HREF="https://www.ghxi.com/ce.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">CE修改器</A>
+<DT><A HREF="https://gameguardian.net/forum/files/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">GG修改器</A>
+<DT><A HREF="https://github.com/dyang886/Game-Cheats-Manager/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Game Cheats Manager</A>
+</DL><p>
+<DT><H3>玩机资源</H3>
+<DL><p>
+<DT><A HREF="https://apkcombo.com/zh/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">安卓旧版软件</A>
+<DT><A HREF="https://xadb.netlify.app/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">ADB在线执行器</A>
+<DT><A HREF="https://magisk.suchenqaq.club/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Magisk 资源分享</A>
+<DT><A HREF="https://modules.lsposed.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Xposed 模块仓库</A>
+<DT><A HREF="https://khwang9883.github.io/MobileModels/misc/bootloader-kernel-source.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">BL解锁规则汇总</A>
+<DT><A HREF="https://filehippo.com/zh/android/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">境外APK下载 ①</A>
+<DT><A HREF="https://fmhy.net/android-iosguide" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">境外APK下载 ②</A>
+<DT><A HREF="https://i.pixcat.cn/ipa-ge-shi-ruan-jian-xia-zai" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">IPA软件下载</A>
+<DT><A HREF="https://xiaomirom.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">小米ROM下载</A>
+<DT><A HREF="https://space.bilibili.com/324056528/video" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">MIUI修改版桌面</A>
+<DT><A HREF="https://www.miuithemer.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">MIUI主题国际站</A>
+<DT><A HREF="https://mindows.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">手机安装Windows</A>
+<DT><A HREF="https://mazhuang.org/awesome-adb/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">ADB 用法大全</A>
+<DT><A HREF="https://www.jamcz.com/tutorial/wanji/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">安卓玩机合集 ①</A>
+<DT><A HREF="https://myql.eu.org/article/ce4438f2-75c7-47c5-9228-5e7cd0f6eb51" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">安卓玩机合集 ②</A>
+<DT><A HREF="https://fmhy.net/android-iosguide#root-flash" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">安卓玩机合集 ③</A>
+<DT><A HREF="https://www.yhcres.top/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">萤火虫资源站</A>
+<DT><A HREF="https://github.com/phhusson/treble_experimentations/wiki/Generic-System-Image-(GSI)-List" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">GSI镜像列表</A>
+<DT><A HREF="https://sr.rikka.app/zh-hans/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">存储空间隔离</A>
+<DT><A HREF="https://github.com/ZCShou/GoGoGo" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">地理位置模拟</A>
+<DT><A HREF="https://github.com/Genymobile/scrcpy" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Scrcpy</A>
+<DT><A HREF="https://www.jamcz.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">晨钟酱</A>
+<DT><A HREF="https://nightmare.press/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">梦魇兽</A>
+<DT><A HREF="https://www.52pojie.cn/thread-1862815-1-1.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">巨魔 2 </A>
+<DT><A HREF="https://www.er.run/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">虫洞</A>
+<DT><A HREF="https://app.tangoapp.dev/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Tango</A>
+<DT><A HREF="https://lsdy.top/gjzs" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">搞机助手</A>
+<DT><A HREF="https://gjzsr.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">搞机助手 R</A>
+<DT><A HREF="https://shizuku.rikka.app/zh-hans/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Shizuku</A>
+<DT><A HREF="https://github.com/timschneeb/awesome-shizuku/blob/master/README_cn.md" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Awesome-Shizuku</A>
+<DT><A HREF="https://github.com/iamr0s/Dhizuku" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Dhizuku</A>
+<DT><A HREF="https://423down.lanzouo.com/b0f1fns7a" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">VMOS Pro</A>
+<DT><A HREF="https://twoyi.app/zh/index.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">两仪</A>
+<DT><A HREF="https://github.com/Cateners/tiny_computer" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">小小电脑</A>
+<DT><A HREF="http://124.221.123.125/cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">虚拟电脑</A>
+<DT><A HREF="https://f-droid.org/zh_Hans/packages/com.termux/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Termux</A>
+<DT><A HREF="https://od.ixcmstudio.cn/repository/main/ZeroTermux/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Termux魔改版</A>
+<DT><A HREF="https://github.com/brunodev85/winlator" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Winlator</A>
+<DT><A HREF="https://github.com/afeimod/winlator-mod" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Winlator-Amod</A>
+<DT><A HREF="https://github.com/KreitinnSoftware/MiceWine-Application" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">MiceWine-Application</A>
+<DT><A HREF="https://www.bilibili.com/read/mobile?id=25407219" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">安卓端PC模拟器合集</A>
+<DT><A HREF="https://github.com/MustardChef/WSABuilds" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">WSABuilds</A>
+<DT><A HREF="https://github.com/PlayCover/PlayCover" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Mac 运行 iOS 游戏</A>
+<DT><A HREF="https://github.com/sickcodes/Docker-OSX" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Docker-OSX</A>
+<DT><A HREF="https://www.winboat.app/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">WinBoat</A>
+<DT><A HREF="https://waydro.id/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Waydroid</A>
+<DT><A HREF="https://github.com/remote-android/redroid-doc/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">redroid</A>
+</DL><p>
+<DT><H3>镜像资源</H3>
+<DL><p>
+<DT><A HREF="https://winnew.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">WinNew</A>
+<DT><A HREF="https://uupdump.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">UUP dump</A>
+<DT><A HREF="https://msdn.itellyou.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">MSDN</A>
+<DT><A HREF="https://next.itellyou.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">NEXT</A>
+<DT><A HREF="https://www.xitongku.com/h5/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">系统库</A>
+<DT><A HREF="https://www.ventoy.net/cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Ventoy</A>
+<DT><A HREF="https://www.iplaysoft.com/pve.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">PVE</A>
+<DT><A HREF="https://home.edgeless.top/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Edgeless</A>
+<DT><A HREF="https://firpe.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">FirPE Project</A>
+<DT><A HREF="https://www.hotpe.top/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">HotPE</A>
+<DT><A HREF="https://sysri.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">SysRi</A>
+<DT><A HREF="https://www.android-x86.org/releases.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Android x86</A>
+<DT><A HREF="https://blissos.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Bliss OS For PC</A>
+<DT><A HREF="https://mackext.com/category/macos/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">黑苹果</A>
+<DT><A HREF="https://mirrors.aliyun.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">阿里巴巴开源镜像站</A>
+<DT><A HREF="https://mirrors.tuna.tsinghua.edu.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">清华大学开源镜像站</A>
+<DT><A HREF="https://mirrors.ustc.edu.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">中科大开源镜像站</A>
+<DT><A HREF="https://i.pixcat.cn/jing-xiang-zhan-hui-zong" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">镜像站汇总 ①</A>
+<DT><A HREF="https://mirrors.cernet.edu.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">镜像站汇总 ②</A>
+<DT><A HREF="https://myql.eu.org/article/%E7%B3%BB%E7%BB%9F" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">雨夜回廊的系统资源整理</A>
+<DT><A HREF="https://51.ruyo.net/12387.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">前端公共库汇总</A>
+<DT><A HREF="https://blog.csdn.net/zhen1819/article/details/110817365" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">yum、npm源</A>
+<DT><A HREF="https://blog.csdn.net/weixin_44003789/article/details/106937578" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">JDK国内镜像</A>
+<DT><A HREF="https://51.ruyo.net/18416.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Docker镜像加速 ①</A>
+<DT><A HREF="https://www.wangdu.site/course/2109.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Docker镜像加速 ②</A>
+<DT><A HREF="https://hf-mirror.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">HF-Mirror</A>
+<DT><A HREF="https://fydeos.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">FydeOS</A>
+<DT><A HREF="https://www.anduinos.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AnduinOS</A>
+</DL><p>
+<DT><H3>WEB资源</H3>
+<DL><p>
+<DT><A HREF="https://www.octopus31.com/code/generate" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">图生代码</A>
+<DT><A HREF="https://www.alloyteam.com/nav/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Web前端导航</A>
+<DT><A HREF="https://webstack.cc/cn/index.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">WebStack</A>
+<DT><A HREF="https://www.w3school.com.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">W3school</A>
+<DT><A HREF="https://iframegenerator.top/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">iframe 生成器 </A>
+<DT><A HREF="https://mkblog.cn/1886/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">文字首字母头像</A>
+<DT><A HREF="https://uncss-online.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">CSS 筛选</A>
+<DT><A HREF="https://utf-8.jp/public/aaencode.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">JS 变萌</A>
+<DT><A HREF="https://hitokoto.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">一言</A>
+<DT><A HREF="https://aplayer.js.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">APlayer</A>
+<DT><A HREF="https://dplayer.diygod.dev/zh/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">DPlayer</A>
+<DT><A HREF="https://github.com/metowolf/MetingJS" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">MetingJS</A>
+<DT><A HREF="https://www.npc.ink/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Npcink</A>
+<DT><A HREF="https://typecho.work/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">念念不忘必有回响</A>
+<DT><A HREF="https://github.com/stars/pixcati/lists/%E5%8D%9A%E5%AE%A2%E7%A8%8B%E5%BA%8F%E4%B8%8E%E4%B8%BB%E9%A2%98" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">我收藏的主题</A>
+<DT><A HREF="https://doc.natfrp.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">樱花Frp文档</A>
+<DT><A HREF="https://easyhexo.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Easy Hexo</A>
+<DT><A HREF="https://litepress.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">LitePress</A>
+<DT><A HREF="https://developers.weixin.qq.com/doc/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">微信官方文档</A>
+</DL><p>
+<DT><H3>代理资源</H3>
+<DL><p>
+<DT><A HREF="https://cdn.pixcat.cn/https://raw.githubusercontent.com/521xueweihan/GitHub520/main/hosts" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Github 最新 hosts</A>
+<DT><A HREF="https://findladders.com/clients/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">常见代理客户端 ①</A>
+<DT><A HREF="https://jichangx.com/gui/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">常见代理客户端 ②</A>
+<DT><A HREF="https://i.pixcat.cn/chang-jian-dai-li-ke-hu-duan" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">常见代理客户端 ③</A>
+<DT><A HREF="https://SUBAPI.cmliussss.net" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">订阅源转换</A>
+<DT><A HREF="https://github.com/yonggekkk/warp-yg" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">WGCF</A>
+<DT><A HREF="https://github.com/yonggekkk/Cloudflare-workers-pages-vless" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Wokers Vless</A>
+<DT><A HREF="https://github.com/cmliu/edgetunnel" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Wokers Vless订阅版</A>
+<DT><A HREF="https://github.com/bia-pain-bache/BPB-Worker-Panel" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">BPB Worker Panel</A>
+<DT><A HREF="https://github.com/qist/xray-ui" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">xray-ui</A>
+<DT><A HREF="https://github.com/MHSanaei/3x-ui" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">3x-ui</A>
+<DT><A HREF="https://steampp.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Watt Toolkit</A>
+</DL><p>
+<DT><H3>影视资源</H3>
+<DL><p>
+<DT><A HREF="https://iao.su/531/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">免费看剧</A>
+<DT><A HREF="https://fmhy.net/videopiracyguide" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">流媒体白嫖索引</A>
+<DT><A HREF="https://mbox.afei7.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">全球票房排行榜</A>
+<DT><A HREF="https://yinghezhinan.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">硬核指南</A>
+<DT><A HREF="https://www.btnull.org/vipplay/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">VIP影视解析</A>
+<DT><A HREF="https://sysub.vip/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">深影译站</A>
+<DT><A HREF="https://www.juwanhezi.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">聚玩盒子</A>
+<DT><A HREF="https://iui.su/175/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">TVBox</A>
+<DT><A HREF="https://yinghezhinan.com/yingshicang-jiekou/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">TVBox 配置源 ①</A>
+<DT><A HREF="http://www.%e9%a5%ad%e5%a4%aa%e7%a1%ac.net/tv" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">TVBox 配置源 ②</A>
+<DT><A HREF="https://yinghezhinan.com/iptv/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">IPTV直播源汇总</A>
+<DT><A HREF="https://guihet.com/tvlistconvert.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">直播源格式转换</A>
+<DT><A HREF="https://www.iiice.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">下次一定</A>
+<DT><A HREF="https://magnet.pages.dev/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">磁力云播</A>
+<DT><A HREF="https://www.dora-video.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">哆啦新番社</A>
+<DT><A HREF="https://fluffle.cc/fmfy" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">NSFW</A>
+</DL><p>
+<DT><H3>学习资源</H3>
+<DL><p>
+<DT><A HREF="https://wantwords.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">反向词典</A>
+<DT><A HREF="https://wantquotes.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">据意查句</A>
+<DT><A HREF="https://glasp.co/books" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Glasp Books</A>
+<DT><A HREF="https://24hbook.store/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">24h搜书</A>
+<DT><A HREF="https://www.shidianguji.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">识典古籍</A>
+<DT><A HREF="https://cnkgraph.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">知识图谱</A>
+<DT><A HREF="https://haitang.app/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">海棠诗社</A>
+<DT><A HREF="https://atimebook.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">时光图书馆</A>
+<DT><A HREF="https://i.pixcat.cn/hu-lian-wang-shang-de-gao-zhi-liang-nei-rong" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">高质量网站集</A>
+<DT><A HREF="https://yunyinghui.feishu.cn/wiki/QrvDwaNt4icE2qkZTPSccNKInhh" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">互联网知识地图</A>
+<DT><A HREF="https://rectg.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">电报优质频道集 ①</A>
+<DT><A HREF="https://github.com/itgoyo/TelegramGroup" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">电报优质频道集 ②</A>
+<DT><A HREF="https://github.com/pixcati?submit=Search&amp;q=book&amp;tab=stars" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">我的Github书单</A>
+<DT><A HREF="https://github.com/programthink/books/blob/master/README.wiki" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">编程随想的图书收藏</A>
+<DT><A HREF="https://ctext.org/zhs" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">中国哲学书电子化计划</A>
+<DT><A HREF="https://basic.smartedu.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">中小学网课大全</A>
+<DT><A HREF="https://jc.pep.com.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">中小学教材电子版</A>
+<DT><A HREF="https://www.chinaooc.com.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">国家高等教育</A>
+<DT><A HREF="https://vocational.smartedu.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">国家职业教育</A>
+<DT><A HREF="https://le.ouchn.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">终身教育平台</A>
+<DT><A HREF="https://www.uedbox.com/post/54160/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在Github上大学</A>
+<DT><A HREF="https://www.github-zh.com/topics/books" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Github上的公共书库</A>
+<DT><A HREF="https://piyao.kepuchina.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">科普中国辟谣频道</A>
+<DT><A HREF="https://www.cdstm.cn/subjects/kxlyb/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">每月科学流言榜</A>
+<DT><A HREF="https://www.xue8nav.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">学吧导航</A>
+<DT><A HREF="https://cnspub.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">CN5学术导航</A>
+<DT><A HREF="https://paper2x.noedgeai.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">paper2x科研导航</A>
+<DT><A HREF="https://www.modevol.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">渐构</A>
+<DT><A HREF="https://zh.annas-archive.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">安娜的档案</A>
+<DT><A HREF="https://www.msdmanuals.cn/home" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">默沙东诊疗手册</A>
+<DT><A HREF="https://cook.aiursoft.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在家做饭指南</A>
+<DT><A HREF="https://cook.yunyoujun.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">食用手册</A>
+<DT><A HREF="https://cooklikehoc.soilzhu.su/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">CookLikeHOC</A>
+<DT><A HREF="http://dg.cnsoc.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">中国居民膳食指南</A>
+<DT><A HREF="https://zufang.ababtools.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">城市租房生存指南</A>
+<DT><A HREF="https://ac-wiki.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">大学生的百科全书</A>
+<DT><A HREF="https://colleges.chat/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">大学生活质量指北</A>
+<DT><A HREF="https://www.criwits.top/missing/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">你缺失的计算机课</A>
+<DT><A HREF="https://csdiy.wiki/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">计算机自学指南</A>
+<DT><A HREF="https://github.com/geekan/HowToLiveLonger" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">程序员延寿指南</A>
+<DT><A HREF="https://github.com/PlexPt/awesome-chatgpt-prompts-zh" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">GPT调教指南</A>
+</DL><p>
+<DT><H3>好站收藏</H3>
+<DL><p>
+<DT><A HREF="https://fmhy.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">FMHY</A>
+<DT><A HREF="https://iao.su/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">不死鸟</A>
+<DT><A HREF="https://www.webhub123.com/#/home/more" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON=""> webhub123</A>
+<DT><A HREF="https://toolight.cn/data/site" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">好用的网站</A>
+<DT><A HREF="https://233heji.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">合集网</A>
+<DT><A HREF="https://www.207788.xyz/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">好网站不私藏</A>
+<DT><A HREF="https://smzdk.top/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">什么值得看</A>
+<DT><A HREF="https://51.ruyo.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">如有乐享</A>
+<DT><A HREF="https://www.freeaday.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">免费资源网</A>
+<DT><A HREF="https://ababtools.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">ABABTOOLS</A>
+<DT><A HREF="https://www.appinn.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">小众软件</A>
+<DT><A HREF="https://xinquji.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">新趣集</A>
+<DT><A HREF="https://meta.appinn.net/c/faxian" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">发现频道</A>
+<DT><A HREF="https://free.com.tw/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">免费资源网路社群</A>
+<DT><A HREF="https://www.bookmarkearth.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">书签地球</A>
+<DT><A HREF="https://yyjingyan.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">有用经验</A>
+<DT><A HREF="https://zh.wikihow.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">wikiHow</A>
+<DT><A HREF="https://zh.ifixit.com/Guide" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">iFixit修理手册</A>
+<DT><A HREF="https://www.wangdu.site/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">文武科技柜</A>
+<DT><A HREF="https://yaxiaozu.ababtools.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">面向租客的租房导航</A>
+<DT><A HREF="https://wzfou.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">挖站否</A>
+<DT><A HREF="https://www.jzbk.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">建站百科</A>
+<DT><A HREF="https://zhujiwiki.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">主机百科</A>
+<DT><A HREF="https://xtrojan.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">XTROJAN黑科技</A>
+<DT><A HREF="https://www.github-zh.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">GitHub中文社区</A>
+<DT><A HREF="https://hellogithub.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">HelloGitHub</A>
+<DT><A HREF="https://topbook.cc/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">TopBook</A>
+<DT><A HREF="https://www.iplaysoft.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">异次元软件世界</A>
+<DT><A HREF="https://echosoar.github.io/weekly/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">偷懒爱好者周刊</A>
+<DT><A HREF="https://www.ruanyifeng.com/blog/weekly/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">科技爱好者周刊 </A>
+<DT><A HREF="https://github.com/xuanli199/weekly/blob/main/README.md" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">每周科技补全 </A>
+<DT><A HREF="https://zishu.me/categories/weekly/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">奇趣周刊 </A>
+<DT><A HREF="https://fre123.com/sp/weekly" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">技术周刊精选列表</A>
+<DT><A HREF="https://1000userguide.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">1000UserGuide</A>
+<DT><A HREF="https://github.com/leonlucc/awesome-alternative" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">平替好物清单</A>
+<DT><A HREF="https://github.com/sindresorhus/awesome" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Awesome</A>
+</DL><p>
+<DT><H3>博客收藏</H3>
+<DL><p>
+<DT><A HREF="https://bf.zzxworld.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">BlogFinder</A>
+<DT><A HREF="https://zhblogs.ohyee.cc/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">中文博客列表导航</A>
+<DT><A HREF="https://www.foreverblog.cn/go.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">虫洞</A>
+<DT><A HREF="https://www.travellings.cn/go.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">开往</A>
+<DT><A HREF="https://igdux.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">耕读</A>
+<DT><A HREF="https://www.freedidi.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">零度解说</A>
+<DT><A HREF="https://2x.nz/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">二叉树树</A>
+<DT><A HREF="https://echs.top/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">二次寒树</A>
+<DT><A HREF="https://www.xiaoyi.vc/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">小羿</A>
+<DT><A HREF="https://myql.eu.org/about" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">雨夜回廊</A>
+<DT><A HREF="https://xn--ghqy5t5uf651b82d.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在下莫老师</A>
+<DT><A HREF="https://blog.laoda.de/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">我不是咕咕鸽</A>
+<DT><A HREF="https://v3u.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">刘悦</A>
+<DT><A HREF="https://blog.xiaoz.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">小z博客</A>
+<DT><A HREF="http://blog.cccyun.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">缤纷彩虹</A>
+<DT><A HREF="https://www.toubiec.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">苏晓晴</A>
+<DT><A HREF="https://www.moerats.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Rat&#039;s Blog</A>
+<DT><A HREF="https://www.nbmao.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">笨猫博客</A>
+<DT><A HREF="https://www.monlor.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Monlor&#039;s Blog</A>
+<DT><A HREF="https://blog.17lai.site/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">夜法之书</A>
+<DT><A HREF="https://www.fengcun.top/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">从零开始的创作生活</A>
+<DT><A HREF="https://iweec.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">梅塔沃克</A>
+<DT><A HREF="https://www.dujin.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">缙哥哥</A>
+<DT><A HREF="https://www.himiku.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">初之音</A>
+<DT><A HREF="https://owomoe.net/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">皮皮凛</A>
+<DT><A HREF="https://vofficial233.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">V&#039;s Blog</A>
+<DT><A HREF="https://cheapy.top/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">平替生活</A>
+</DL><p>
+<DT><H3>猎奇收藏</H3>
+<DL><p>
+<DT><A HREF="https://search.bilibili.com/all?keyword=Sapien%20Medicine" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">音频能量场</A>
+<DT><A HREF="https://onion666.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Tor网址集</A>
+<DT><A HREF="https://blog.17lai.site/posts/1accbe50/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">易学入门</A>
+<DT><A HREF="https://www.daorenjia.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">道教经典</A>
+<DT><A HREF="http://www.xuefo9.net/jz/all.asp" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">佛教经典</A>
+<DT><A HREF="http://www.dzj.fosss.net/relative/sdhb/zyjt/4285-zydjt" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">藏密度亡经</A>
+<DT><A HREF="https://tarotap.com/zh" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AI塔罗占卜</A>
+<DT><A HREF="https://www.youtube.com/playlist?list=PL2BTl-ntPF4xGldEc3s72M58FtUplqXww" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">文始真经</A>
+<DT><A HREF="https://www.youtube.com/playlist?list=PL2BTl-ntPF4xXe9T13fMRppyN0t8JSX4w" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">山海经密码</A>
+<DT><A HREF="https://m.blossomdreaming.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">繁盛梦</A>
+<DT><A HREF="https://jiayezi.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">行星鉴定记录者</A>
+<DT><A HREF="https://www.wingmakerschina.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Wingmakers</A>
+<DT><A HREF="https://m.weibo.cn/u/7669407665" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">万万</A>
+<DT><A HREF="http://ruowenh.com/%E4%B8%BB%E9%A0%81/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Ruowen Huang</A>
+<DT><A HREF="https://tieba.baidu.com/p/7156836600?see_lz=0" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">世界简史</A>
+<DT><A HREF="https://yuanwushi.org/article-tag-2621.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">灵体结构示意</A>
+<DT><A HREF="https://tieba.baidu.com/p/1219269818" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">退出鬼压床</A>
+<DT><A HREF="https://search.bilibili.com/all?keyword=%E5%9C%A3%E5%A4%9A%E7%BA%B3%E9%87%8A%E6%94%BE%E6%B3%95" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">移除负面想法</A>
+<DT><A HREF="https://search.bilibili.com/all?keyword=%E9%9F%B3%E8%8D%AF" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">五音疗疾</A>
+<DT><A HREF="https://www.bilibili.com/video/BV14g411N7wy" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">祛附</A>
+<DT><A HREF="https://jiba.plus/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">在线壮阳</A>
+<DT><A HREF="https://pan.pixcat.cn/%E7%8E%84%E5%AD%A6" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">资料集 ①</A>
+<DT><A HREF="https://pan.pixcat.cn/%E5%AD%A6%E4%B9%A0/%E7%8E%84%E5%AD%A6" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">资料集 ②</A>
+</DL><p>
+<DT><H3>有趣收藏</H3>
+<DL><p>
+<DT><A HREF="https://youquhome.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">有趣网址之家</A>
+<DT><A HREF="https://qiqu.dreamthere.cn/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">奇趣</A>
+<DT><A HREF="https://iui.su/3093/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">发现有趣的东西</A>
+<DT><A HREF="https://fmhy.net/miscguide#interactive" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Interesting</A>
+<DT><A HREF="https://startab.cn/explorer?topic=113" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">世界漫游指南</A>
+<DT><A HREF="https://lab.magiconch.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">神奇海螺试验场</A>
+<DT><A HREF="https://aidn.jp/mikutap/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">Mikutap</A>
+<DT><A HREF="https://ce2.greensea.org/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">月球地图</A>
+<DT><A HREF="https://www.skylinewebcams.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">全球高清实况摄像头</A>
+<DT><A HREF="https://livechina.cctv.com/zhibo" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">景区实时摄像头</A>
+<DT><A HREF="https://www.explore.org/livecams" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">世界各地动物园直播</A>
+<DT><A HREF="https://i.pixcat.cn/wang-ye-ban-de-cao-zuo-xi-tong" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">网页版操作系统</A>
+<DT><A HREF="https://voicewiki.cn/wiki/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">语音维基</A>
+<DT><A HREF="https://caonima.de/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">骂人宝典</A>
+<DT><A HREF="https://shua.leyz.top/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">流量消失器</A>
+<DT><A HREF="https://bugteas.github.io/nugget_speens_h5/index.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">万物皆可旋转</A>
+<DT><A HREF="https://realaddress.fuyiran.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">真实地址生成器</A>
+<DT><A HREF="https://duibiao.info/post/4211" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">工作时长排行榜</A>
+<DT><A HREF="https://re.maa-ai.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">AI 人生重开手帐</A>
+<DT><A HREF="https://lab.nulla.top/ba-logo" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">蔚蓝档案标题生成器</A>
+<DT><A HREF="https://www.logoly.pro/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">P站Logo生成</A>
+<DT><A HREF="https://pintree.io/guide-zh.html" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">用书签生成网站</A>
+<DT><A HREF="https://superexcuse.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">超级借口</A>
+<DT><A HREF="https://hong.greatdk.com/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">哄哄模拟器</A>
+<DT><A HREF="https://noclip.website/" ADD_DATE="1781080479" LAST_VISIT="1781080479" ICON="">游戏地图博物馆</A>
+</DL><p>
+</DL><p>
